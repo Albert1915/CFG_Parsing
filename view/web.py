@@ -1,26 +1,24 @@
-# import streamlit as front end framework
 import streamlit as st
 import os
+from PIL import Image
 
-# import necessary functions
 from controller.open_file import open_file
 from controller.raw_conversion import raw_to_cfg
 from controller.cyk_algorithm.cyk_parse import parse
 
-# prepare the web view
-def run_streamlit():
-    # setup the web title
-    title = 'Algoritma CYK For CFG Parsing'
-    title2 = 'KELOMPOK 2 KELAS E'
 
-    # setup the web configuration
-    st.set_page_config(layout='wide', page_title=title, menu_items={
-        'About': f"""
-        ### {title}
-        GitHub: https://github.com/Albert1915/CFG_Parsing
-        """
-    })
-    
+def run_streamlit():
+    title = 'Pengecekan Pola Kalimat Bahasa Indonesia Dengan Algoritma CYK'
+    titleKelompok = 'Kelompok 3 - Kelas D'
+
+    st.set_page_config(layout='wide', page_title=title)
+
+    # st.title(title)
+    st.write(
+        f"<h1 style='text-align:center; padding-bottom: 5px; font-size: 45px;'>{title}</h1>", unsafe_allow_html=True)
+    st.write(
+        f"<h2 style='text-align: center; font-size: 30px; font-weight: 300; padding-bottom: 40px; padding-top: 5px;' >{titleKelompok}</h2>", unsafe_allow_html=True)
+
     upload_file = st.file_uploader(
         'Upload Set of Rules dalam format .txt', type=['txt'])
     col1, col2 = st.columns(2, gap='small')  # 2 columns
@@ -59,5 +57,7 @@ def run_streamlit():
         # checking if rules.txt is empty
         if os.stat('model/rules.txt').st_size == 0:
             st.info("Upload rules terlebih dahulu!")
+            contoh = Image.open('model/contoh.jpg')
+            st.image(contoh, caption='Contoh Format Set of Rules')
         else:
             st.write(raw_cfg)
