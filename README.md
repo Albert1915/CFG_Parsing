@@ -23,4 +23,36 @@ Python as the main programming language.
 - [Streamlit](https://streamlit.io/) - Streamlit is a web framework for python that we use to deploy our apps.
 
 ## Structure 📂
-git config --global alias.tree '! git ls-tree --full-name --name-only -t -r HEAD | sed -e "s/[^-][^\/]*\//   |/g" -e "s/|\([^ ]\)/|-- \1/"'
+```
+ETF-DFA
+├── .github
+├── docs
+├── handlers
+├── modules
+├── static
+│   ├── images
+│   ├── scripts
+│   └── styles
+├── templates
+├── tests
+├── .gitignore
+├── LICENSE
+├── Procfile
+├── README.md
+├── app.py
+└── requirements.txt
+```
+- [.github](.github/) is a folder that used to place Github related stuff, like PR template and CI pipeline.
+- [docs](docs/) contain documentation of this app.
+- [handlers](handlers/) contain handler to handling HTTP request methods, especially POST method.
+- [modules](modules/) contain the main modules for each language.
+- [static](static/) contain static files like images, CSS, and JavaScript files.
+- [templates](templates/) contain the file that will be rendered for display in the browser.
+- [tests](tests/) contain unit test to make sure the main module work properly.
+- [.gitignore](.gitignore) is a file to exclude some folders like venv.
+- [LICENSE](LICENSE) is a file that contains the license we use in this app.
+- [Procfile](Procfile) is a file that specifies the commands that are executed by an Heroku app on startup.
+- [README.md](README.md) is the file you are reading now.
+- [app.py](app.py) is the main file of this app.
+- [requirements.txt](requirements.txt) is a file that contains a list of dependencies used in this app.
+
