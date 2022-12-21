@@ -23,10 +23,6 @@ def run_streamlit():
     
     # upload the cnf rule file
     uploaded_file = st.file_uploader('Upload CNF Rules File', type=['txt'])
-    # if the file is uploaded
-    if uploaded_file is not None:
-        # parse the file
-        parse(open_file(uploaded_file))
     
     # convert the raw cnf rules into readable format for Python
     cnf = raw_to_cfg(open_file(uploaded_file))
