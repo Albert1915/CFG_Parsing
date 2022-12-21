@@ -2,7 +2,6 @@
 import streamlit as st
 import os
 
-
 # import necessary functions
 from controller.open_file import open_file
 from controller.raw_conversion import raw_to_cfg
@@ -22,7 +21,7 @@ def run_streamlit():
         """
     })
     
-   upload_file = st.file_uploader(
+    upload_file = st.file_uploader(
         'Upload Set of Rules dalam format .txt', type=['txt'])
     col1, col2 = st.columns(2, gap='small')  # 2 columns
 
@@ -60,7 +59,5 @@ def run_streamlit():
         # checking if rules.txt is empty
         if os.stat('model/rules.txt').st_size == 0:
             st.info("Upload rules terlebih dahulu!")
-            contoh = Image.open('model/contoh.jpg')
-            st.image(contoh, caption='Contoh Format Set of Rules')
         else:
             st.write(raw_cfg)
