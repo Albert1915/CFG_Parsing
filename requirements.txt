@@ -1,6 +1,0 @@
-
-GitPython==3.1.29
-numpy==1.23.5
-pandas==1.5.2
-streamlit==1.16.0
-controller== 0.1.0 (request, python-socketio, bidict, urlib, charset,..)
