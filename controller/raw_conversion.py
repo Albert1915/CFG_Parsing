@@ -1,42 +1,43 @@
 # convert raw rules into readable by Python
-def raw_to_cfg(raw):
-    # prepare empty list
+def raw_to_cfg(raw_rules):
+    # prepare the empty list
     cfg = []
-
-    # for each line in rules, split it by ' -> ', then append into cfg list
-    for line in raw:
-        cfg.append(line.split(' -> '))
-
-    # for each body in rules, split the body by ' | ' then convert into set
-    for rule in cfg:
-        rule[1] = set(rule[1].split(' | '))
-
-    # for each line in rules
-    for rule in cfg:
-        # prepare the empty set
-        new_body = set()
-        # for every element in body
-        for element in rule[1]:
-            # convert each body (variable and terminal) into tuple by splitting it by ' '
-            element_to_tuple = tuple(element.split(' '))
-            # append the tupple into new_body set
-            new_body.add(element_to_tuple)
-        # change the old body with new body format
-        rule[1] = new_body
-
-    # return the readable rules
+    # for each rule
+    for rule in raw_rules:
+        # split the rule into left and right side
+        left, right = rule.split('->')
+        # split the right side into list
+        right = right.split('|')
+        # append the rule into cfg list
+        cfg.append([left, right])
+    
+    # return the cfg rules
     return cfg
 
-# create rules in html format
-def create_html(raw):
-    # starting by <p> tag
-    html_raw = '<p>'
-    # for every rule in raw rules
-    for line in raw:
-        # append the rule to html_raw then end by <br>
-        html_raw += f'{line}<br>'
-    # end the html_raw by </p> tag
-    html_raw += '</p>'
+# convert raw rules into readable by Python
+def raw_to_cnf(raw_rules):
+    # prepare the empty list
+    cnf = []
+    # for each rule
+    for rule in raw_rules:
+        # split the rule into left and right side
+        left, right = rule.split('->')
+        # split the right side into list
+        right = right.split('|')
+        # append the rule into cnf list
+        cnf.append([left, right])
+    
+    # return the cnf rules
+    return cnf
 
-    # return the raw html rules
-    return html_raw
+# create rule in html format
+def create_rule_html(rule):
+    # prepare the empty string
+    html = ''
+    # for each rule
+    for x in rule:
+        # append the rule into html string
+        html += x + '<br>'
+    
+    # return the html string
+    return html
