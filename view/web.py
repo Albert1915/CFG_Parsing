@@ -20,10 +20,11 @@ def run_streamlit():
         """
     })
     
-    # prepare the cnf rules
-    raw_cfg = open_file('model/cnf.txt')
+    # upload the cnf rule file
+    uploaded_file = st.file_uploader("Upload CNF Rules", type="txt")
+    
     # convert the raw cnf rules into readable format for Python
-    cnf = raw_to_cfg(raw_cfg)
+    cnf = raw_to_cfg(open_file(uploaded_file))
 
     # Untuk Menampilkan Judul
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
@@ -35,7 +36,8 @@ def run_streamlit():
     # prepre the left column
     with kanan:
         st.write("### CNF Rules:")
-        st.write(raw_cfg)
+        # show the cnf rules in html format
+        st.write(cnf, unsafe_allow_html=True)
 
     # prepare the right column
     with kiri:
