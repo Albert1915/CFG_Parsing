@@ -11,7 +11,6 @@
 By using CFG_Parsing
 - [x] Checks whether a string is accepted by the language or not.
 - [x] Get details of Table Filling process
-- [x] Get transition diagram images of each language.
 - [x] Get details structure of the rules
 
 ## Technology 👨‍💻
