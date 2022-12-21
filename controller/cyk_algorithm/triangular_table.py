@@ -6,8 +6,6 @@ from pandas import DataFrame
 empty = '\u2205'
 
 # prepare the table for cyk algorithm
-
-
 def create_table(list_of_string):
     # prepare empty list
     table = []
@@ -23,13 +21,13 @@ def create_table(list_of_string):
             # else append current row with empty set as column
             else:
                 table[i].append(set())
-
+    
     # return the empty table
     return table
 
 
 # fill the first iteration
-def filling_bottom(table, cnf, list_of_string):
+def filling_botton(table, cnf, list_of_string):
     # for every word in list
     for i, word in enumerate(list_of_string):
         # prepar empty set for table cell
@@ -42,24 +40,28 @@ def filling_bottom(table, cnf, list_of_string):
                 if word.lower() in (x.lower() for x in element):
                     # add it to cell set
                     cell.add(row[0])
-                    # break the
+                    # break the 
                     break
-
+        
         # fill the diagonal ([i][i]) table with cell set
         table[i][i] = cell
 
 
 # fill all the filling table, starting from row 1
-def filling_all(cnf, table, string, row=1):
+def filling_all(cnf, table, string, row = 1):
+    # if first column in last row is not an empty set [set()]
     if table[len(table) - 1][0] != set():
+        # if the start symbol in there
         if 'X' in table[len(table) - 1][0]:
-            st.success('Kalimat sesuai dengan aturan!', icon="✅")
-            # delete content of rules.txt
-            open('model/rules.txt', 'w').close()
+            # show sign that the sentence accepted
+            st.success('Sentence accepted.')
+            st.balloons()
         else:
-            st.error('Kalimat tidak sesuai dengan aturan!', icon="❌")
-            # delete content of rules.txt
-            open('model/rules.txt', 'w').close()
+            # else show the sign the the sentece not accpted
+            st.error('Sentence not accepted.')
+            st.snow()
+        
+        # stop the recursive
         return
 
     # find the next row to filled with iteration function
@@ -75,7 +77,7 @@ def iteration(cnf, table, input_string, row):
     for column in range(len(table) - 1, -1, -1):
         # if the current cell is empty set
         if table[row][column] == set():
-
+            
             # prepare empty list to store the intersection
             list_of_intersect = []
             # iterate row in current cell from row 0
@@ -108,7 +110,7 @@ def iteration(cnf, table, input_string, row):
             # combine all the combination in result_list into a set
             combine_result = combine(result_list)
             # print(combine_result)
-
+            
             # find the right cnf rules for the current table's cell
             table[row][column] = find_cnf(combine_result, cnf)
 
@@ -150,7 +152,7 @@ def make_combination(list_input):
             for element2 in list2:
                 # the combination is the tuple of current element1 and current element2, then append it
                 combination[i].append(tuple((element1, element2)))
-
+    
     # return the combination
     return combination
 
@@ -171,8 +173,6 @@ def combine(raw_combination):
     return result_set
 
 # find the right cnf's head to fill the current cell
-
-
 def find_cnf(combine, cnf):
     # prepare the empty set
     cnf_return = set()
@@ -185,7 +185,7 @@ def find_cnf(combine, cnf):
             if com in row[1]:
                 # add the head of current rule into cnf_return set
                 cnf_return.add(row[0])
-
+    
     # if cnf_return is empty set
     if cnf_return == set():
         # return the empty set symbol
