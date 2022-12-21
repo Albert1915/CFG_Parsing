@@ -1,11 +1,9 @@
-# open the uploaded file and return the raw cnf rules
-
-def open_file(uploaded_file):
-    # prepare empty list
-    raw = []
-    # if file is uploaded
-    if uploaded_file is not None:
-        # read the file
-        raw = uploaded_file.read().decode('utf-8').split(' ')
-    # return the raw cnf rules
+# open the uploaded file and return the raw cnf rules file
+def open_file(file):
+    # read the file
+    raw = file.read().decode('utf-8')
+    # split the file by line
+    raw = raw.splitlines()
+    # return the raw rules
     return raw
+
