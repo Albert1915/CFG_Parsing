@@ -1,0 +1,25 @@
+K → S P O
+K → S P Ket
+K → S P Pel
+K → S P O Ket
+K → S P O Pel
+K → S P O Pel Ket
+K → S P
+S → NP
+P → VP | PP | AdjP | NP | NumP 
+O → NP
+Ket → NP | NumP | PP |Adv
+Pel → NP | VP | AdjP | PP
+PP → Prep NP | Prep AdjP | Prep VP | Prep Adv
+NP → NP PropNoun | NP Pronoun | NP Noun | Num NP | PropNoun | Pronoun | Noun
+VP → Adv | Verb
+NumP → Num | Num Noun               
+AdjP → Adv | Adj
+PropNoun → Dokter Cahya | LA | Rumah Sakit Bali Mandara | Bandara Ngurah Rai Bali | Jimbaran | Aokigahara | Jepang | Ryujin | Senin | Jurusan Informatika | Universitas Udayana | Tepung Terigu | Anna | Budi | Andi | Burhan |  Wayan | Desa Penglipuran | Bali | Bu Indah | Arkeologi | Inggris
+Prep → ke | dari | di | antara |  pada | bagi | guna | agar | untuk | sebab | sehingga | karena 
+Pronoun → saya | aku | itu | dia | kita | ini | ia | kami 
+Adv → sedang | sudah | baru saja | selalu | masih | lebih | sebelah | secara | bukan | dengan | harus | sering | larut | tidak | jarang | sambil | terus | bersama | bisa | sangat | sengaja 
+Adj → mudah | terkenal | asing | sulit | tinggi | malas | panik | macet | subur | baik | lincah | lantang | semangat | cerdik | seru | kotor | terbersih | rendah | hemat | sakit | lapar | ramai 
+Verb → memutuskan | pindah | bekerja | sampai | pulang | membawa | berada | merupakan | berharap | berakhir | terletak | menginap | pergi | bermain | terjebak | dibersihkan | mencegah | bangun | terasa | memilih | meningkatkan | mengatasi | sengaja | diletakkan | digunakan | menghemat | diperlukan | membuat | senantiasa | dijaga | menghindari | bekerja sama | tercapai | ditutup | mempercepat | sakit | terluka | jatuh | pura-pura | pergi | dimarahi | pulang | masuk | melanggar | mengurangi | bepergian | mencegah | mengikuti | diperbaiki | menjaga | mendapatkan | tumbuh | dirawat | dilakukan | berlari | berteriak | bernyanyi | memainkan | bekerja | menikmati | berolahraga | mencuri | bersama | tertarik | minum | digedornya | berteriak | berjalan | berangkat | dituntut | sengaja | dipesan | bernyanyi | bunuh | berbahasa | bepergian | tinggal 
+noun → kakak | kantor | bus | penumpang | paket | rumah | hutan | tempat | rumahnya | bukit | kakak ipar | komplek | mobilitas | penduduk | dataran | paus | hutan | bakau | selokan | bencana | banjir | rutin | pagi | hari | mahasiswa | koding | seorang | pemula | produsen | bahan-bahan | kualitas | mutu | produk | rasa | peringatan | larangan | diri | kemampuan | keharusan | fitur | mode | daya | baterai | adonan | kue |persatuan | perpecahan | tujuan | perbaikan | jalan | toilet | perut | motor | sekolah | malam | penjara | hukum | virus | penyakit | penularan | simulasi | bencana | alam | masyarakat | desa | penghargaan | keberihan | lingkungan | tanaman | pelajaran | olahraga | ruangan | hujan | hari | ibu | pasar | adik | kijang | gitar | warga | bakti | udara | pagi | kancil | pak tani | timun | keluarga | anak-anak | tablet | air | pintu | pertandingan | rekan | rektorat | kuliah | motor | ulang tahun | hal 
+num → beberapa | banyak | segelas | berulang kali
