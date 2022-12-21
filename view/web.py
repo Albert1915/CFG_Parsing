@@ -1,7 +1,7 @@
 # import streamlit as front end framework
 import streamlit as st
 import os
-from PIL import Image
+
 
 # import necessary functions
 from controller.open_file import open_file
@@ -22,7 +22,7 @@ def run_streamlit():
         """
     })
     
-    upload_file = st.file_uploader(
+   upload_file = st.file_uploader(
         'Upload Set of Rules dalam format .txt', type=['txt'])
     col1, col2 = st.columns(2, gap='small')  # 2 columns
 
@@ -42,34 +42,25 @@ def run_streamlit():
     cnf = raw_to_cfg(raw_cfg)
     st.write(cnf)
 
-
-    # Untuk Menampilkan Judul
-    st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
-    st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
-    
-    # Pisah web menjadi dua kolom, kolom kanan menampilkan cnf rule, kolom kiri menampilkan filling table
-    kiri, kanan = st.columns(2, gap='small')
-
-    # prepare the left column
-    with kiri:
-        st.write("### CNF Rules:")
-        st.write(raw_cfg)
-
-    # prepare the right column
-    with kanan:
-        # the input sentence text field
-        string_input = st.text_input('Masukkan Kalimat:')
-        # convert sentence into list
+    with col1:
+        string_input = st.text_input(
+            'Kalimat Yang Dicek : ', placeholder='Masukan Kalimat')
         list_string = string_input.split(' ')
-        # check button
-        button_click = st.button('Check', type='primary')
+        button_click = st.button('Cek Kalimat', type='primary')
 
-        # action if button clicked
         if button_click:
-            # show error when no string or just one string entered
             if len(list_string) <= 1:
-                st.error("Masukkan kalimat yang valid (minimal 2 kata)")
-            # else, process the filing table
+                st.error("Kalimat tidak boleh kosong!")
             elif string_input != '':
-                st.write('<br><p>Mengisi Table:</p>', unsafe_allow_html=True)
+                st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
                 parse(cnf, string_input.split(' '))
+
+    with col2:
+        st.write("### Set of Rules :")
+        # checking if rules.txt is empty
+        if os.stat('model/rules.txt').st_size == 0:
+            st.info("Upload rules terlebih dahulu!")
+            contoh = Image.open('model/contoh.jpg')
+            st.image(contoh, caption='Contoh Format Set of Rules')
+        else:
+            st.write(raw_cfg)
