@@ -22,37 +22,13 @@ Python as the main programming language.
 - [HTML](https://www.w3.org/html) - HTML is the fundamental markup language for webpages.
 - [Streamlit](https://streamlit.io/) - Streamlit is a web framework for python that we use to deploy our apps.
 
-## Structure 📂
-```
-ETF-DFA
-├── .github
-├── docs
-├── handlers
-├── modules
-├── static
-│   ├── images
-│   ├── scripts
-│   └── styles
-├── templates
-├── tests
-├── .gitignore
-├── LICENSE
-├── Procfile
-├── README.md
-├── app.py
-└── requirements.txt
-```
-- [.github](.github/) is a folder that used to place Github related stuff, like PR template and CI pipeline.
-- [docs](docs/) contain documentation of this app.
-- [handlers](handlers/) contain handler to handling HTTP request methods, especially POST method.
-- [modules](modules/) contain the main modules for each language.
-- [static](static/) contain static files like images, CSS, and JavaScript files.
-- [templates](templates/) contain the file that will be rendered for display in the browser.
-- [tests](tests/) contain unit test to make sure the main module work properly.
-- [.gitignore](.gitignore) is a file to exclude some folders like venv.
-- [LICENSE](LICENSE) is a file that contains the license we use in this app.
-- [Procfile](Procfile) is a file that specifies the commands that are executed by an Heroku app on startup.
-- [README.md](README.md) is the file you are reading now.
-- [app.py](app.py) is the main file of this app.
-- [requirements.txt](requirements.txt) is a file that contains a list of dependencies used in this app.
+
+## Contributors ✨
+<br>
+<table align="center">
+  <tr>
+    <td align="center"><a href="[https://github.com/putuwaw](https://github.com/Albert1915)"><img src="https://avatars.githubusercontent.com/u/76970766?s=400&u=adf4015762046d3e3ab4178b48366719243df2fc&v=4" width="150px;" alt=""/><br><sub><b>Albert Okario</b></sub></td> 
+  </tr>
+</table>
+
 
