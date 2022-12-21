@@ -2,7 +2,6 @@
 import streamlit as st
 
 # import necessary functions
-from controller import *
 from controller.open_file import open_file
 from controller.raw_conversion import raw_to_cfg
 from controller.cyk_algorithm.cyk_parse import parse
@@ -21,11 +20,26 @@ def run_streamlit():
         """
     })
     
-    # upload the cnf rule file
-    uploaded_file = st.file_uploader('Upload CNF Rules File', type=['txt'])
-    
-    # convert the raw cnf rules into readable format for Python
-    cnf = raw_to_cfg(open_file(uploaded_file))
+    upload_file = st.file_uploader(
+        'Upload Set of Rules dalam format .txt', type=['txt'])
+    col1, col2 = st.columns(2, gap='small')  # 2 columns
+
+    if upload_file and upload_file.type == 'text/plain':  # check if file is .txt
+        if upload_file is not None:
+            file = upload_file.getvalue().decode('utf-8')
+            with open('model/rules.txt', 'w') as secondFile:
+                for line in file:
+                    if line != '\n':
+                        secondFile.write(line)
+            st.success("File berhasil diupload!")
+            secondFile.close()
+        else:
+            st.error("File tidak ada!")
+
+    raw_cfg = open_file('model/rules.txt')
+    cnf = raw_to_cfg(raw_cfg)
+    st.write(cnf)
+
 
     # Untuk Menampilkan Judul
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
@@ -34,14 +48,13 @@ def run_streamlit():
     # Pisah web menjadi dua kolom, kolom kanan menampilkan cnf rule, kolom kiri menampilkan filling table
     kiri, kanan = st.columns(2, gap='small')
 
-    # prepre the left column
-    with kanan:
+    # prepare the left column
+    with kiri:
         st.write("### CNF Rules:")
-        # show the cnf rules in html format
-        st.write(cnf, unsafe_allow_html=True)
+        st.write(raw_cfg)
 
     # prepare the right column
-    with kiri:
+    with kanan:
         # the input sentence text field
         string_input = st.text_input('Masukkan Kalimat:')
         # convert sentence into list
