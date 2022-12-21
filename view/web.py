@@ -1,5 +1,7 @@
 # import streamlit as front end framework
 import streamlit as st
+import os
+from PIL import Image
 
 # import necessary functions
 from controller.open_file import open_file
