@@ -23,5 +23,4 @@ Python as the main programming language.
 - [Streamlit](https://streamlit.io/) - Streamlit is a web framework for python that we use to deploy our apps.
 
 ## Structure 📂
-```
-CFG_Parsing
+git config --global alias.tree '! git ls-tree --full-name --name-only -t -r HEAD | sed -e "s/[^-][^\/]*\//   |/g" -e "s/|\([^ ]\)/|-- \1/"'
