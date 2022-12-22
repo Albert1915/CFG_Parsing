@@ -27,6 +27,7 @@ Python as the main programming language.
     <td align="center"><a href="https://github.com/Albert1915"><img src="https://avatars.githubusercontent.com/u/76970766?s=400&u=adf4015762046d3e3ab4178b48366719243df2fc&v=4" width="150px;" alt=""/><br><sub><b>Albert Okario</b></sub></td> 
     <td align="center"><a href="https://github.com/putrip3"><img src="https://avatars.githubusercontent.com/u/103046943?v=4" width="150px;" alt=""/><br><sub><b>Putu Putri Pratiwi</b></sub></td>
     <td align="center"><a href="https://github.com/kamisama27"><img src="https://avatars.githubusercontent.com/u/64056781?v=4" width="150px;" alt=""/><br><sub><b>I Nyoman Dheva Surya</b></sub></td>
+    <td align="center"><a href="https://github.com/hanaachristine"><img src="https://avatars.githubusercontent.com/u/102980333?v=4" width="150px;" alt=""/><br><sub><b>Hana Christine</b></sub></td>
   </tr>
 </table>
 
