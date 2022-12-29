@@ -47,4 +47,6 @@ def run_streamlit():
             # else, process the filing table
             elif string_input != '':
                 st.write('<br><p>Mengisi Table:</p>', unsafe_allow_html=True)
+                st.write('<br>', unsafe_allow_html=True)
+                # parse the sentence
                 parse(cnf, string_input.split(' '))
