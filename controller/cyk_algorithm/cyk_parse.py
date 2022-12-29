@@ -3,7 +3,7 @@ import streamlit as st
 from pandas import DataFrame
 
 # import the triangular table process
-from controller.cyk_algorithm.triangular_table import *
+from controller.cyk_algorithm.table_filling import *
 
 # parse the sentence with cyk algorithm
 def parse(cnf, list_of_string):
