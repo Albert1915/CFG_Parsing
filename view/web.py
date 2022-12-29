@@ -38,6 +38,8 @@ def run_streamlit():
     list_string = string_input.split(' ')
     # check button
     button_click = st.button('Check', type='primary')
+    # untuk meminimize tabel yang muncul
+    st.write('<br>', unsafe_allow_html=True)
 
         # action if button clicked
     if button_click:
