@@ -29,7 +29,7 @@ def run_streamlit():
     # Untuk Menampilkan Judul
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
-    st.write(f"<h2 style='text-align:center; '>{github}</h5>", unsafe_allow_html=True)
+    st.write(f"<h5 style='text-align:center; '>{github}</h5>", unsafe_allow_html=True)
     
     st.write("### CNF RULES:")
     st.write(raw_cfg)
