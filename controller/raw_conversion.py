@@ -26,17 +26,3 @@ def raw_to_cfg(raw):
 
     # return the readable rules
     return cfg
-
-# create rules in html format
-def create_html(raw):
-    # starting by <p> tag
-    html_raw = '<p>'
-    # for every rule in raw rules
-    for line in raw:
-        # append the rule to html_raw then end by <br>
-        html_raw += f'{line}<br>'
-    # end the html_raw by </p> tag
-    html_raw += '</p>'
-
-    # return the raw html rules
-    return html_raw
