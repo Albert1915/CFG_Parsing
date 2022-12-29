@@ -50,4 +50,10 @@ def run_streamlit():
                 st.write('<br>', unsafe_allow_html=True)
                 # parse the sentence
                 st.markdown('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
-                parse(cnf, string_input.split(' '))
+                # memilih apakah ingin menampilkan tabel atau tidak
+                show_table = st.radio('Tampilkan Tabel?', ('Ya', 'Tidak'))
+                if show_table == 'Ya':
+                    parse(cnf, string_input.split(' '))
+                # else, show error
+                else:
+                    st.error("Masukkan kalimat yang valid")
