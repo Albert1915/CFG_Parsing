@@ -28,7 +28,7 @@ def run_streamlit():
     # Untuk Menampilkan Judul
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
-    st.write("<h5 style='text-align: center;'> GitHub: <a href='https://github.com/Albert1915/CFG_Parsing'>Albert1915/CFG_Parsing</a></h2>", unsafe_allow_html=True)
+    st.write("<h5 style='text-align: center;'><a href='https://github.com/Albert1915/CFG_Parsing'>Albert1915/CFG_Parsing</a></h2>", unsafe_allow_html=True)
     
     st.write("### CNF RULES:")
     st.write(raw_cfg)
