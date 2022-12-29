@@ -2,9 +2,9 @@
 import streamlit as st
 
 # import necessary functions
-from backend.open_file import open_file
-from backend.raw_conversion import raw_to_cfg
-from backend.cyk_algorithm.cyk_parse import parse
+from controller.open_file import open_file
+from controller.raw_conversion import raw_to_cfg
+from controller.cyk_algorithm.cyk_parse import parse
 
 # prepare the web view
 def run_streamlit():
