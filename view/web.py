@@ -29,6 +29,8 @@ def run_streamlit():
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
     
+    st.write("### CNF RULES:")
+    st.write(raw_cfg)
 
     # the input sentence text field
     string_input = st.text_input('Masukkan Kalimat:')
