@@ -21,7 +21,7 @@ def run_streamlit():
     })
     
     # prepare the cnf rules
-    raw_cfg = open_file('model/cnf.txt')
+    raw_cfg = open_file('rules/cnf.txt')
     # convert the raw cnf rules into readable format for Python
     cnf = raw_to_cfg(raw_cfg)
 
