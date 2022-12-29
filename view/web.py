@@ -29,25 +29,16 @@ def run_streamlit():
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
     
-    # Pisah web menjadi dua kolom, kolom kanan menampilkan cnf rule, kolom kiri menampilkan filling table
-    kiri, kanan = st.columns(2, gap='small')
 
-    # prepre the left column
-    with kiri:
-        st.write("### CNF Rules:")
-        st.write(raw_cfg)
-
-    # prepare the right column
-    with kanan:
-        # the input sentence text field
-        string_input = st.text_input('Masukkan Kalimat:')
-        # convert sentence into list
-        list_string = string_input.split(' ')
-        # check button
-        button_click = st.button('Check', type='primary')
+    # the input sentence text field
+    string_input = st.text_input('Masukkan Kalimat:')
+    # convert sentence into list
+    list_string = string_input.split(' ')
+    # check button
+    button_click = st.button('Check', type='primary')
 
         # action if button clicked
-        if button_click:
+    if button_click:
             # show error when no string or just one string entered
             if len(list_string) <= 1:
                 st.error("Masukkan kalimat yang valid (minimal 2 kata)")
