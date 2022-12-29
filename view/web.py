@@ -29,7 +29,16 @@ def run_streamlit():
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
     
+    # Pisah web menjadi dua kolom, kolom kanan menampilkan cnf rule, kolom kiri menampilkan filling table
+    kiri, kanan = st.columns(2, gap='small')
 
+    # prepre the left column
+    with kiri:
+        st.write("### CNF Rules:")
+        st.write(raw_cfg)
+
+    # prepare the right column
+    with kanan:
         # the input sentence text field
         string_input = st.text_input('Masukkan Kalimat:')
         # convert sentence into list
