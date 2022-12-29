@@ -53,12 +53,7 @@ def run_streamlit():
                 # parse the sentence
                 st.markdown('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
                 # memilih apakah ingin menampilkan tabel atau tidak
-                show_table = st.radio('Tampilkan Tabel?', ('Ya', 'Tidak'))
+                show_table = st.radio('Hapus Tabel?', ('Ya', 'Tidak'))
                 if show_table == 'Ya':
                     parse(cnf, string_input.split(' '))
-               #jika tidak ingin menampilkan tabel, tampilkan string yang diterima atau tidak
-                else:
-                    if parse(cnf, string_input.split(' ')) == True:
-                        st.write("Kalimat diterima")
-                    else:
-                        st.write("Kalimat tidak diterima")
+             
