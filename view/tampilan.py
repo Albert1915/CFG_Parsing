@@ -11,6 +11,7 @@ def run_streamlit():
     # setup the web title
     title = 'Algoritma CYK For CFG Parsing'
     title2 = 'KELOMPOK 2 KELAS E'
+    github = 'https://github.com/Albert1915/CFG_Parsing(https://github.com/Albert1915/CFG_Parsing)'
    
     # setup the web configuration
     st.set_page_config(layout='wide', page_title=title, menu_items={
@@ -28,7 +29,7 @@ def run_streamlit():
     # Untuk Menampilkan Judul
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
-    st.write("check out this [link](https://github.com/Albert1915/CFG_Parsing)")
+    st.write(f"<h5 style='text-align:center; '>{github}</h5>", unsafe_allow_html=True)
     
     st.write("### CNF RULES:")
     st.write(raw_cfg)
