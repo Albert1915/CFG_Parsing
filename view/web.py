@@ -54,6 +54,9 @@ def run_streamlit():
                 show_table = st.radio('Tampilkan Tabel?', ('Ya', 'Tidak'))
                 if show_table == 'Ya':
                     parse(cnf, string_input.split(' '))
-                # else, show error
+               #jika tidak ingin menampilkan tabel, tampilkan string yang diterima atau tidak
                 else:
-                    st.error("Masukkan kalimat yang valid")
+                    if parse(cnf, string_input.split(' ')) == True:
+                        st.write("Kalimat diterima")
+                    else:
+                        st.write("Kalimat tidak diterima")
