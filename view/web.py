@@ -43,14 +43,16 @@ def run_streamlit():
         # check button
     button_click = st.button('Check', type='primary')
 
+    
         # action if button clicked
     if button_click:
             # show error when no string or just one string entered
             if len(list_string) <= 1:
                 st.error("Sentence can't be null or a word.")
             # else, process the filing table
-            # give choice to user to see the process or not
-            elif st.checkbox('Close Table Filling'):
+            # markdown to clear the previous table
+            elif string_input != '':
+                # close table or not
+                st.checkbox('Close Table', value=True)
                 st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
                 parse(cnf, string_input.split(' '))
-            
