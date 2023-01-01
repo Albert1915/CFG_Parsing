@@ -49,6 +49,18 @@ def run_streamlit():
             if len(list_string) <= 1:
                 st.error("Sentence can't be null or a word.")
             # else, process the filing table
-            elif string_input != '':
+            # give choice to user to see the process or not
+            elif st.checkbox('Show Process'):
                 st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
                 parse(cnf, string_input.split(' '))
+            # else, just show the result
+            else:
+                st.write('<br><p>Result:</p>', unsafe_allow_html=True)
+                parse(cnf, string_input.split(' '))
+                st.write('<br><p>Result:</p>', unsafe_allow_html=True)
+                if table[-1][0] == 'S':
+                    st.success('Sentence is valid')
+                else:
+                    st.error('Sentence is invalid')
+                    
+                    
