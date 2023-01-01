@@ -9,15 +9,15 @@ from controller.cyk_algorithm.cyk_parse import parse
 # prepare the web view
 def run_streamlit():
     # title for the web
-    title = 'Algoritma CYK For CFG Parsing'
+    title = 'Syntactic Parsing of Indonesian Sentences Using CYK Algorithm'
     title2 = 'KELOMPOK 2 KELAS E'
 
     # setup the web configuration
     st.set_page_config(layout='wide', page_title=title, menu_items={
         'About': f"""
         ### {title}
-        Made by Group 2 in Class E    
-        GitHub: https://github.com/Albert1915/CFG_Parsing
+        Made by Group 2 in Class E  
+        GitHub: https://github.com/Albert1915/CYK_Algorithm
         """
     })
     
@@ -28,24 +28,23 @@ def run_streamlit():
 
     # web title
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
-    st.write(f"<h1 style='text-align:center; '>{title2}</h1>", unsafe_allow_html=True)
+    st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
+    # Link
     st.write("<h5 style='text-align: center;'><a href='https://github.com/Albert.1915/CFG_Parsing'>Albert1915/CFG_Parsing</a></h2>", unsafe_allow_html=True)
 
-    # Show Rules
-        st.write("### CNF Rules:")
-        st.write(raw_cfg)
+    
+    st.write("### CNF Rules:")
+    st.write(raw_cfg)
 
-   
-    #Show Input Field
         # the input sentence text field
-        string_input = st.text_input('Input Sentence')
+    string_input = st.text_input('Input Sentence')
         # convert sentence into list
-        list_string = string_input.split(' ')
+    list_string = string_input.split(' ')
         # check button
-        button_click = st.button('Check', type='primary')
+    button_click = st.button('Check', type='primary')
 
         # action if button clicked
-        if button_click:
+    if button_click:
             # show error when no string or just one string entered
             if len(list_string) <= 1:
                 st.error("Sentence can't be null or a word.")
