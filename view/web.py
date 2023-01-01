@@ -9,7 +9,7 @@ from controller.cyk_algorithm.cyk_parse import parse
 # prepare the web view
 def run_streamlit():
     # title for the web
-    title = 'Syntactic Parsing of Indonesian Sentences Using CYK Algorithm'
+    title = 'PARSING INDONESIAN SENCTENCE WITH CYK ALGORITHM'
     title2 = 'KELOMPOK 2 KELAS E'
 
     # setup the web configuration
