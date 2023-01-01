@@ -53,6 +53,6 @@ def run_streamlit():
             # markdown to clear the previous table
             elif string_input != '':
                 # close table or not
-                st.checkbox('Close Table', value=True)
+                st.checkbox('Close Table', value=False)
                 st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
                 parse(cnf, string_input.split(' '))
