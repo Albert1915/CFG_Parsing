@@ -49,6 +49,8 @@ def run_streamlit():
             if len(list_string) <= 1:
                 st.error("Sentence can't be null or a word.")
             # else, process the filing table
-            elif string_input != '':
+            # give choice to user to see the process or not
+            elif st.checkbox('Close Table Filling'):
                 st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
                 parse(cnf, string_input.split(' '))
+            
