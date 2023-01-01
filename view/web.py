@@ -9,7 +9,7 @@ from controller.cyk_algorithm.cyk_parse import parse
 # prepare the web view
 def run_streamlit():
     # title for the web
-    title = 'PARSING INDONESIAN SENCTENCE WITH CYK ALGORITHM'
+    title = 'Syntactic Parsing of Indonesian Sentences Using CYK Algorithm'
     title2 = 'KELOMPOK 2 KELAS E'
 
     # setup the web configuration
@@ -49,8 +49,6 @@ def run_streamlit():
             if len(list_string) <= 1:
                 st.error("Sentence can't be null or a word.")
             # else, process the filing table
-            # give choice to user to see the process or not
-            elif st.checkbox('Close Table Filling'):
+            elif string_input != '':
                 st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
                 parse(cnf, string_input.split(' '))
-            
