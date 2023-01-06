@@ -4,12 +4,12 @@ def print_table(table_data, column_name):
     table {
     border-collapse: collapse;
     width: 100%;
-    border-color: #FFA800;
     }
 
     th {
     background-color: #C7332A;
     color: white;
+    border-color: blue;
     }
     </style>
     """
