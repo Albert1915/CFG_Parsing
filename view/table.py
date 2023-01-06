@@ -2,6 +2,8 @@ def print_table(table_data, column_name):
     table = """
     <style>
     table {
+    border-style: solid;
+    border-color: #FFA800;
     border-collapse: collapse;
     width: 100%;
     }
@@ -9,7 +11,6 @@ def print_table(table_data, column_name):
     th {
     background-color: #C7332A;
     color: white;
-    border-color: blue;
     }
     </style>
     """
