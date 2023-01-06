@@ -1,4 +1,4 @@
-# import streamlit as front end framework
+# Library Yang Digunakan
 import streamlit as st
 
 # import necessary functions
@@ -21,18 +21,18 @@ def run_streamlit():
         """
     })
     
-    # prepare the cnf rules
+    # Menyiapkan Cnf Rule
     raw_cfg = open_file('model/cnf.txt')
     # convert the raw cnf rules into readable format for Python
     cnf = raw_to_cfg(raw_cfg)
 
-    # web title
+    # Memanggil Title pada web
     st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
     st.write(f"<h2 style='text-align:center; '>{title2}</h2>", unsafe_allow_html=True)
     # Link
     st.write("<h5 style='text-align: center;'><a href='https://github.com/Albert.1915/CFG_Parsing'>Albert1915/CFG_Parsing</a></h2>", unsafe_allow_html=True)
 
-    
+    # Menampilkan Rules diweb
     st.write("### CNF Rules:")
     st.write(raw_cfg)
 
