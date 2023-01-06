@@ -3,13 +3,13 @@ def print_table(table_data, column_name):
     <style>
     table {
     border-style: solid;
-    border-color: blue;
+    border-color: #E3ACF9;
     border-collapse: collapse;
     width: 100%;
     }
 
     th {
-    background-color: white;
+    background-color: #FF6464;
     color: white;
     }
     </style>
